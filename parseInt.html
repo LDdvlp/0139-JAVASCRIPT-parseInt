@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parseInt() in JavaScript & JS String to Int</title>
+
+    <style>
+
+        body {
+            background-color: White;
+        }
+
+        
+        .source_links {
+            color: Teal;
+            background-color: lavender;
+            font-size: 12px;
+            line-height: 16px;
+            font-style: italic;
+            padding: 5px 10px 5px 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+        .bold {
+            font-weight: 700;
+        }
+        
+        .code {
+            color : Crimson;
+            background-color: WhiteSmoke;
+            font-family: Consolas;
+            padding: 5px 10px 5px 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+        .output {
+            color : RoyalBlue;
+            background-color: WhiteSmoke;
+            font-family: Consolas;
+            padding: 5px 10px 5px 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+        .small_letters {
+            color: DimGray;
+            font-size: small;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>parseInt() in JavaScript – JS String to Int</h1>
+
+    <div class="source_links">
+        <p>Sources :
+      	    <ol>
+                <li>
+                    <a href="https://www.freecodecamp.org/news/parseint-in-javascript-js-string-to-int-example/?utm_campaign=Frontend%2BWeekly&utm_medium=web&utm_source=Frontend_Weekly_296" target="_blank">
+			        parseInt() in JavaScript – JS String to Int Example | freeCodeCamp - Ihechikara Vincent Abba 
+		            </a><br>
+                </li>
+                <li>
+      	            <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/parseInt" target="_blank">
+			    parseInt() | mdn web docs
+                    </a><br>
+                </li>
+            </ol>
+	    </p>
+    </div>
+
+    <hr/>
+
+    <h2>parseInt()</h2>
+
+    <p><em>Ouvrez la console !</em></p>
+    
+    <!-- Paragraph 01 -->
+    <p class="bold">Paragraph #01 Code :</p>
+
+    <pre class="code"><code>
+    const myNumber = '3';
+    console.log(2 + myNumber);</code>
+    </pre>
+        
+    <p class="bold">Paragraph #01 Output :</p>
+    <p id="p1" class="output"></p>
+
+    <!-- Paragraph 02 -->
+    <p class="bold">Paragraph #02 Code :</p>
+
+    <pre class="code"><code>
+    const myNumber = '3';
+    console.log(2 + parseInt(myNumber));</code>
+    </pre>
+    
+    <p class="bold">Paragraph #02 Output :</p>
+    <p id="p2" class="output"></p>
+
+    <!-- Paragraph 03 -->
+    <p class="bold">Paragraph #03 Code :</p>
+
+    <pre class="code"><code>
+    const age = 'age is 50';
+    console.log(parseInt(age));</code>
+    </pre>
+    
+    <p class="bold">Paragraph #03 Output :</p>
+    <p id="p3" class="output"></p>
+
+    <!-- Paragraph 04 -->
+    <p class="bold">Paragraph #04 Code :</p>
+
+    <pre class="code"><code>
+    const rearrangedAge = '50 is age';
+    console.log(parseInt(rearrangedAge));</code>
+    </pre>
+    
+    <p class="bold">Paragraph #04 Output :</p>
+    <p id="p4" class="output"></p>
+
+    <!-- Paragraph 05 -->
+    <p class="bold">Paragraph #05 Code :</p>
+    <p><em>The parseInt function (method) only attempts to extract the first value of a string.</em></p>
+
+    <pre class="code"><code>
+    const stringedAge1 = '50.05 is age';
+    const stringedAge2 = '50,05 is age';
+    const stringedAge3 = '50/05 is age';
+    const stringedAge4 = '50 100 150 200';
+    const stringedAge5 = '50istheage';
+    console.log(parseInt(stringedAge1));
+    console.log(parseInt(stringedAge2));
+    console.log(parseInt(stringedAge3));
+    console.log(parseInt(stringedAge4));
+    console.log(parseInt(stringedAge5));</code>
+    </pre>
+    
+    <p class="bold">Paragraph #05 Output :</p>
+    <p id="p5.1" class="output"></p>
+    <p id="p5.2" class="output"></p>
+    <p id="p5.3" class="output"></p>
+    <p id="p5.4" class="output"></p>
+    <p id="p5.5" class="output"></p>
+
+    <!-- Paragraph 06 -->
+    <p class="bold">Paragraph #06 Code :</p>
+    <p><em>Base de numération de 2 à 36.<br /><strong>Attention !</strong> La base par défaut n'est pas 10.<br />
+    Ce paramètre doit toujours être utilisé, en effet s'il n'est pas spécifié,<br />
+    le comportement de la fonction n'est pas garanti et peut varier d'une plate-forme à une autre.<br />
+    Si l'argument string commence avec "0x" ou "0X", la base considérée sera la base 16 (hexadécimale).<br />
+    Si l'argument string commence avec "0", la base considérée sera la base 8 (octale) ou la base 10 (décimale).<br />
+    Si l'argument string commence avec une autre valeur, la base considérée sera la base 10.<br /><br />
+    <strong>
+    POUR ÉVITER LES ERREURS SUIVANT LES IMPLÉMENTATIONS,<br />
+    IL FAUT TOUJOURS DÉFÉNIR LE PARAMÈTRE POUR LA BASE !!!
+    </strong>
+    </em></p>
+
+    <pre class="code"><code>
+    parseInt(string, base);</code>
+    </pre>
+
+    <pre class="code">
+    <code>
+    <em class="small_letters">01.</em> console.log(parseInt("50", 12));
+    <em class="small_letters">02.</em> console.log(parseInt("50", 36));
+    <em class="small_letters">03.</em> console.log(parseInt("50", 10));
+    <em class="small_letters">04.</em> console.log(parseInt("000", 16));
+    <em class="small_letters">05.</em> console.log(parseInt("111", 16));
+    <em class="small_letters">06.</em> console.log(parseInt("000", 8));
+    <em class="small_letters">07.</em> console.log(parseInt("111", 8));
+    <em class="small_letters">08.</em> console.log(parseInt("000", 10));
+    <em class="small_letters">09.</em> console.log(parseInt("111", 10));
+    <em class="small_letters">10.</em> console.log(parseInt("000", 2));
+    <em class="small_letters">11.</em> console.log(parseInt("111", 2));
+    <em class="small_letters">12.</em> console.log(parseInt("111", 2));
+    <em class="small_letters">13.</em> console.log(parseInt("0x12"));
+    <em class="small_letters">14.</em> console.log(parseInt("0X12"));
+    <em class="small_letters">15.</em> console.log(parseInt("0X12", 16));
+    <em class="small_letters">16.</em> console.log(parseInt("0X12", 10));
+    <em class="small_letters">17.</em> console.log(parseInt("012"));
+    <em class="small_letters">18.</em> console.log(parseInt("012"));
+    <em class="small_letters">19.</em> console.log(parseInt("012", 8));
+    <em class="small_letters">20.</em> console.log(parseInt("012", 10));</code>
+    </pre>
+
+    <p class="bold">Paragraph #06 Output :</p>
+    <p id="p6.1" class="output"></p>
+    <p id="p6.2" class="output"></p>
+    <p id="p6.3" class="output"></p>
+    <p id="p6.4" class="output"></p>
+    <p id="p6.5" class="output"></p>
+    <p id="p6.6" class="output"></p>
+    <p id="p6.7" class="output"></p>
+    <p id="p6.8" class="output"></p>
+    <p id="p6.9" class="output"></p>
+    <p id="p6.10" class="output"></p>
+    <p id="p6.11" class="output"></p>
+    <p id="p6.12" class="output"></p>
+    <p id="p6.13" class="output"></p>
+    <p id="p6.14" class="output"></p>
+    <p id="p6.15" class="output"></p>
+    <p id="p6.16" class="output"></p>
+    <p id="p6.17" class="output"></p>
+    <p id="p6.18" class="output"></p>
+    <p id="p6.19" class="output"></p>
+    <p id="p6.20" class="output"></p>
+
+<script>
+
+    // Paragraph 01
+    const myNumber = '3';
+    console.log(2 + myNumber);
+    document.getElementById("p1").innerHTML = 2 + myNumber;
+    
+    // Paragraph 02
+    console.log(2 + parseInt(myNumber));
+    document.getElementById("p2").innerHTML = 2 + parseInt(myNumber);
+
+    // Paragraph 03
+    const age = 'age is 50';
+    console.log(parseInt(age));
+    document.getElementById("p3").innerHTML = parseInt(age) + ' // Not A Number';
+
+    // Paragraph 04
+    const rearrangedAge = '50 is age';
+    console.log(parseInt(rearrangedAge));
+    document.getElementById("p4").innerHTML = parseInt(rearrangedAge);
+
+    // Paragraph 05
+    const stringedAge1 = '50.05 is age';
+    const stringedAge2 = '50,05 is age';
+    const stringedAge3 = '50/05 is age';
+    const stringedAge4 = '50 100 150 200';
+    const stringedAge5 = '50istheage';
+    console.log(parseInt(stringedAge1));
+    console.log(parseInt(stringedAge2));
+    console.log(parseInt(stringedAge3));
+    console.log(parseInt(stringedAge4));
+    console.log(parseInt(stringedAge5));
+    document.getElementById("p5.1").innerHTML = parseInt(stringedAge1);
+    document.getElementById("p5.2").innerHTML = parseInt(stringedAge2);
+    document.getElementById("p5.3").innerHTML = parseInt(stringedAge3);
+    document.getElementById("p5.4").innerHTML = parseInt(stringedAge4);
+    document.getElementById("p5.5").innerHTML = parseInt(stringedAge5);
+    
+    // Paragraph 06
+    console.log(parseInt("50", 12));
+    console.log(parseInt("50", 36));
+    console.log(parseInt("50", 10));
+    console.log(parseInt("000", 16));
+    console.log(parseInt("111", 16));
+    console.log(parseInt("000", 8));
+    console.log(parseInt("111", 8));
+    console.log(parseInt("000", 10));
+    console.log(parseInt("111", 10));
+    console.log(parseInt("000", 2));
+    console.log(parseInt("111", 2));
+    console.log(parseInt("111", 2));
+    console.log(parseInt("0x12"));
+    console.log(parseInt("0X12"));
+    console.log(parseInt("0X12", 16));
+    console.log(parseInt("0X12", 10));
+    console.log(parseInt("012"));
+    console.log(parseInt("012"));
+    console.log(parseInt("012", 8));
+    console.log(parseInt("012", 10));
+    document.getElementById("p6.1").innerHTML = '<em class="small_letters">01. </em>' + parseInt("50", 12);
+    document.getElementById("p6.2").innerHTML = '<em class="small_letters">02. </em>' + parseInt("50", 36);
+    document.getElementById("p6.3").innerHTML = '<em class="small_letters">03. </em>' + parseInt("50", 10);
+    document.getElementById("p6.4").innerHTML = '<em class="small_letters">04. </em>' + parseInt("000", 16);
+    document.getElementById("p6.5").innerHTML = '<em class="small_letters">05. </em>' + parseInt("111", 16);
+    document.getElementById("p6.6").innerHTML = '<em class="small_letters">06. </em>' + parseInt("000", 8);
+    document.getElementById("p6.7").innerHTML = '<em class="small_letters">07. </em>' + parseInt("111", 8);
+    document.getElementById("p6.8").innerHTML = '<em class="small_letters">08. </em>' + parseInt("000", 10);
+    document.getElementById("p6.9").innerHTML = '<em class="small_letters">09. </em>' + parseInt("111", 10);
+    document.getElementById("p6.10").innerHTML = '<em class="small_letters">10. </em>' + parseInt("000", 2);
+    document.getElementById("p6.11").innerHTML = '<em class="small_letters">11. </em>' + parseInt("111", 2);
+    document.getElementById("p6.12").innerHTML = '<em class="small_letters">12. </em>' + parseInt("111", 2);
+    document.getElementById("p6.13").innerHTML = '<em class="small_letters">13. </em>' + parseInt("0x12");
+    document.getElementById("p6.14").innerHTML = '<em class="small_letters">14. </em>' + parseInt("0X12");
+    document.getElementById("p6.15").innerHTML = '<em class="small_letters">15. </em>' + parseInt("0X12", 16);
+    document.getElementById("p6.16").innerHTML = '<em class="small_letters">16. </em>' + parseInt("0X12", 10);
+    document.getElementById("p6.17").innerHTML = '<em class="small_letters">17. </em>' + parseInt("012");
+    document.getElementById("p6.18").innerHTML = '<em class="small_letters">18. </em>' + parseInt("012");
+    document.getElementById("p6.19").innerHTML = '<em class="small_letters">19. </em>' + parseInt("012", 8);
+    document.getElementById("p6.20").innerHTML = '<em class="small_letters">20. </em>' + parseInt("012", 10);
+
+</script>    
+    
+</body>
+</html>
